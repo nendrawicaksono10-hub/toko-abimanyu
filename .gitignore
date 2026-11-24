@@ -1,0 +1,24 @@
+# Variabel lingkungan sensitif
+.env
+.env.*
+
+# Dependensi frontend (CSS hasil build sudah disertakan di public/assets/css/app.css)
+frontend/node_modules/
+
+# Berkas runtime & unggahan pengguna
+backend/storage/logs/*.log
+backend/storage/ratelimit/*.json
+backend/storage/bukti/*
+!backend/storage/bukti/.gitkeep
+public/uploads/produk/*
+!public/uploads/produk/.gitkeep
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

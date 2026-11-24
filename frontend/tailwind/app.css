@@ -1,0 +1,195 @@
+/*
+ * Sumber CSS Tailwind v4 - Toko Abimanyu (Earthy Warm Editorial).
+ * Dikompilasi menjadi public/assets/css/app.css dengan:  npm run build  (di folder frontend/)
+ * Token desain mengikuti UI revisi: design.md & toko_abimanyu_editorial_living/DESIGN.md
+ *   - Latar krem hangat #F9F8F6, kartu putih, garis #E6E2DA
+ *   - Aksen hijau zaitun tua #2B3528 / #3B4837
+ *   - Judul EB Garamond (serif editorial), teks & kontrol Manrope
+ */
+@import "tailwindcss";
+
+@source "../views";
+@source "../../public/assets/js";
+
+/* ---------- Font di-host sendiri (tanpa CDN): public/assets/fonts ---------- */
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/eb-garamond-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/eb-garamond-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 600 700; font-display: swap; src: url("../fonts/eb-garamond-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 400; font-display: swap; src: url("../fonts/eb-garamond-latin-400-italic.woff2") format("woff2"); }
+@font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 500 700; font-display: swap; src: url("../fonts/eb-garamond-latin-500-italic.woff2") format("woff2"); }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/manrope-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/manrope-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/manrope-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 700 800; font-display: swap; src: url("../fonts/manrope-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Material Symbols Outlined"; font-style: normal; font-weight: 400; font-display: block; src: url("../fonts/material-symbols-outlined-latin-400-normal.woff2") format("woff2"); }
+
+@theme {
+  /* ---------- Warna ---------- */
+  --color-primary: #2b3528;           /* Deep Forest Olive - tombol utama, aktif */
+  --color-primary-hover: #3b4837;     /* Mid Olive */
+  --color-on-primary: #ffffff;
+  --color-forest: #1f2a1d;            /* sidebar admin, banner gelap */
+  --color-on-forest-muted: #a3ae9d;
+  --color-ink: #1c211b;               /* judul & teks tegas (charcoal olive) */
+  --color-surface: #f9f8f6;           /* kanvas krem hangat */
+  --color-surface-card: #ffffff;
+  --color-surface-subtle: #f3f1ec;
+  --color-surface-muted: #efece6;
+  --color-border-warm: #e6e2da;
+  --color-secondary: #6e6e6e;         /* teks sekunder */
+  --color-outline: #757871;
+  --color-outline-variant: #c5c8bf;
+  --color-on-surface: #1a1c1b;
+  --color-on-surface-variant: #444842;
+  --color-sage: #dfe8d8;              /* latar badge hijau lembut */
+  --color-on-sage: #3d4a39;
+  --color-success: #2e7d32;
+  --color-warning: #b45309;
+  --color-warning-container: #fdf0dc;
+  --color-error: #c62828;
+  --color-error-container: #fbe4e2;
+  --color-on-error-container: #93000a;
+
+  /* ---------- Tipografi ---------- */
+  --font-sans: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "EB Garamond", Georgia, serif;
+  --font-display: "EB Garamond", Georgia, serif;
+  --font-headline-lg: "EB Garamond", Georgia, serif;
+  --font-headline-md: "EB Garamond", Georgia, serif;
+  --font-headline-sm: "EB Garamond", Georgia, serif;
+  --font-title-lg: "Manrope", sans-serif;
+  --font-title-md: "Manrope", sans-serif;
+  --font-body-lg: "Manrope", sans-serif;
+  --font-body-md: "Manrope", sans-serif;
+  --font-body-sm: "Manrope", sans-serif;
+  --font-label-md: "Manrope", sans-serif;
+  --font-label-sm: "Manrope", sans-serif;
+  --font-caption: "Manrope", sans-serif;
+
+  --text-display: 3.5rem;
+  --text-display--line-height: 4rem;
+  --text-display--letter-spacing: -0.02em;
+  --text-display--font-weight: 500;
+  --text-headline-lg: 2.75rem;
+  --text-headline-lg--line-height: 3.1rem;
+  --text-headline-lg--letter-spacing: -0.01em;
+  --text-headline-lg--font-weight: 500;
+  --text-headline-lg-mobile: 2rem;
+  --text-headline-lg-mobile--line-height: 2.4rem;
+  --text-headline-lg-mobile--letter-spacing: -0.01em;
+  --text-headline-lg-mobile--font-weight: 500;
+  --text-headline-md: 1.875rem;
+  --text-headline-md--line-height: 2.35rem;
+  --text-headline-md--font-weight: 500;
+  --text-headline-sm: 1.375rem;
+  --text-headline-sm--line-height: 1.85rem;
+  --text-headline-sm--font-weight: 500;
+  --text-title-lg: 1.125rem;
+  --text-title-lg--line-height: 1.6rem;
+  --text-title-lg--font-weight: 700;
+  --text-title-md: 1rem;
+  --text-title-md--line-height: 1.45rem;
+  --text-title-md--font-weight: 700;
+  --text-body-lg: 1.0625rem;
+  --text-body-lg--line-height: 1.75rem;
+  --text-body-md: 0.9375rem;
+  --text-body-md--line-height: 1.55rem;
+  --text-body-sm: 0.84375rem;
+  --text-body-sm--line-height: 1.35rem;
+  --text-label-md: 0.875rem;
+  --text-label-md--line-height: 1.25rem;
+  --text-label-md--letter-spacing: 0.01em;
+  --text-label-md--font-weight: 600;
+  --text-label-sm: 0.8125rem;
+  --text-label-sm--line-height: 1rem;
+  --text-label-sm--letter-spacing: 0.02em;
+  --text-label-sm--font-weight: 600;
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1rem;
+  --text-caption--letter-spacing: 0.04em;
+  --text-caption--font-weight: 600;
+
+  /* ---------- Radius ---------- */
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.25rem;
+
+  /* ---------- Bayangan (elevasi tonal) ---------- */
+  --shadow-lembut: 0 4px 16px rgba(28, 28, 28, 0.06);
+  --shadow-melayang: 0 8px 24px -4px rgba(28, 28, 28, 0.08), 0 2px 6px -1px rgba(28, 28, 28, 0.04);
+  --shadow-modal: 0 20px 40px -8px rgba(28, 28, 28, 0.14);
+
+  /* ---------- Spasi bernama (8px grid) ---------- */
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2rem;
+  --spacing-space-2xl: 3rem;
+  --spacing-space-3xl: 5rem;
+  --spacing-gutter: 1rem;
+  --spacing-gutter-desktop: 1.5rem;
+  --spacing-margin: 1.25rem;
+  --spacing-margin-tablet: 2rem;
+  --spacing-margin-desktop: 3rem;
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body { @apply bg-surface text-on-surface antialiased; font-family: var(--font-sans); }
+  ::selection { background: var(--color-sage); color: var(--color-ink); }
+  [hidden] { display: none !important; }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+  input[type="number"] { -moz-appearance: textfield; }
+  .angka { font-variant-numeric: tabular-nums; }
+}
+
+/* Tombol (pill) - didefinisikan sebagai @utility agar dapat di-@apply */
+@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-full font-label-md text-label-md transition-all duration-200 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed; }
+@utility btn-primer { @apply btn px-7 py-3 bg-primary text-on-primary hover:bg-primary-hover hover:scale-[1.01] shadow-sm; }
+@utility btn-sekunder { @apply btn px-7 py-3 bg-surface-card text-ink border border-border-warm hover:bg-surface-subtle; }
+@utility btn-kecil { @apply px-4 py-2 text-label-sm; }
+@utility btn-bahaya { @apply btn px-5 py-2.5 bg-surface-card text-error border border-error-container hover:bg-error-container; }
+
+@layer components {
+  /* Ikon Material Symbols */
+  .material-symbols-outlined {
+    font-family: "Material Symbols Outlined"; font-weight: normal; font-style: normal;
+    font-size: 24px; line-height: 1; letter-spacing: normal; text-transform: none;
+    display: inline-block; white-space: nowrap; word-wrap: normal; direction: ltr;
+    -webkit-font-smoothing: antialiased; font-feature-settings: "liga"; user-select: none;
+  }
+
+  .wadah { @apply max-w-[1280px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop; }
+
+  /* Form */
+  .label { @apply block font-label-md text-label-md text-on-surface mb-1.5; }
+  .input { @apply w-full bg-surface-card border border-border-warm rounded-xl px-4 py-2.5 font-body-sm text-body-sm text-on-surface placeholder:text-secondary focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all; }
+  .input-galat { @apply border-error focus:border-error focus:ring-error/20; }
+  .pesan-galat { @apply mt-1 font-body-sm text-[12.5px] text-error; }
+  select.input { @apply appearance-none pr-10 bg-no-repeat; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23757871' stroke-width='1.6'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-position: right 0.75rem center; }
+  .cek { @apply w-[18px] h-[18px] rounded border border-border-warm accent-[#2b3528]; }
+
+  /* Kartu */
+  .kartu { @apply bg-surface-card border border-border-warm rounded-3xl; }
+  .kartu-muted { @apply bg-surface-subtle border border-border-warm rounded-3xl; }
+
+  .eyebrow { @apply font-caption text-caption text-secondary uppercase tracking-widest; }
+  .chip { @apply inline-flex items-center gap-1 px-3 py-1 rounded-full border font-caption text-caption whitespace-nowrap; }
+  .judul-serif { @apply font-display text-ink tracking-tight; }
+
+  /* Tabel admin */
+  .tabel { @apply w-full text-left border-collapse; }
+  .tabel thead th { @apply px-4 py-3 font-caption text-caption uppercase tracking-wider text-secondary bg-surface-subtle border-b border-border-warm whitespace-nowrap; }
+  .tabel tbody td { @apply px-4 py-3.5 border-b border-border-warm align-middle font-body-sm text-body-sm; }
+  .tabel tbody tr:last-child td { @apply border-b-0; }
+  .tabel tbody tr:hover { @apply bg-surface-subtle/60; }
+
+  /* Slider rentang budget ganda (RangeBudget) */
+  .slider-budget { @apply absolute inset-x-0 top-1/2 -translate-y-1/2 w-full h-1 appearance-none bg-transparent pointer-events-none; }
+  .slider-budget::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; pointer-events: auto; width: 20px; height: 20px; border-radius: 9999px; background: #fff; border: 2px solid #2b3528; cursor: grab; box-shadow: 0 2px 6px rgba(28,28,28,.12); }
+  .slider-budget::-moz-range-thumb { pointer-events: auto; width: 18px; height: 18px; border-radius: 9999px; background: #fff; border: 2px solid #2b3528; cursor: grab; }
+  .slider-budget::-moz-range-track { background: transparent; }
+}

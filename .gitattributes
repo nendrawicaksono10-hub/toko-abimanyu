@@ -1,0 +1,19 @@
+* text=auto eol=lf
+
+*.php text eol=lf
+*.sql text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.htaccess text eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.woff2 binary
+
+frontend/package-lock.json linguist-generated
+public/assets/css/app.css linguist-generated

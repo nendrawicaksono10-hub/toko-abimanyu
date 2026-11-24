@@ -1,0 +1,13 @@
+{
+  "name": "toko-abimanyu-frontend",
+  "private": true,
+  "description": "Kompilasi Tailwind CSS v4 untuk Toko Abimanyu (hanya dibutuhkan saat pengembangan).",
+  "scripts": {
+    "build": "tailwindcss -i ./tailwind/app.css -o ../public/assets/css/app.css --minify",
+    "dev": "tailwindcss -i ./tailwind/app.css -o ../public/assets/css/app.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.1.11",
+    "tailwindcss": "4.1.11"
+  }
+}
